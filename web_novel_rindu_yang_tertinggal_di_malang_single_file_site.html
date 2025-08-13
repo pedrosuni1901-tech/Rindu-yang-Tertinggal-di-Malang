@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rindu yang Tertinggal di Malang — Pedro Suni</title>
+  <meta name="description" content="Web novel Rindu yang Tertinggal di Malang karya Pedro Suni. Sebuah kisah tentang cinta, jarak, kehilangan, dan pulang ke diri sendiri." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f1115;
+      --surface: #141822;
+      --text: #e8ecf3;
+      --muted: #9aa5b1;
+      --brand: #7aa2f7;
+      --accent: #f8bd7f;
+      --link: #a1e3a1;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --maxw: 900px;
+      --lh: 1.9;
+      --fs: 1.05rem;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body { margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, Noto Sans, sans-serif; background: radial-gradient(1200px 1200px at 120% -10%, rgba(122,162,247,.08), transparent 60%), linear-gradient(180deg,#0b0d12,#0f1115 40%,#0d1017); color: var(--text); }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Layout */
+    .shell { display: grid; grid-template-columns: 280px 1fr; min-height: 100vh; }
+    aside { position: sticky; top: 0; height: 100vh; padding: 28px 22px; border-right: 1px solid rgba(255,255,255,.06); background: linear-gradient(180deg, rgba(20,24,34,.9), rgba(20,24,34,.75)); backdrop-filter: blur(6px); }
+    main { padding: 40px 6vw; display: flex; justify-content: center; }
+    .content { width: 100%; max-width: var(--maxw); }
+
+    /* Sidebar */
+    .brand { display:flex; align-items:center; gap:12px; margin-bottom: 14px; }
+    .badge { width:40px; height:40px; border-radius: 12px; background: linear-gradient(135deg, #2b3244, #1f2330); display:grid; place-items:center; box-shadow: var(--shadow); }
+    .badge span { font-weight: 800; color: var(--accent); }
+    .title { font-family: Merriweather, serif; font-size: 1.06rem; font-weight: 900; line-height:1.2; }
+    .subtitle { color: var(--muted); font-size:.9rem; margin-bottom: 18px; }
+
+    .nav { margin-top: 18px; }
+    .nav h4 { color: var(--muted); font-size:.8rem; letter-spacing:.08em; text-transform: uppercase; margin: 18px 0 10px; }
+    .nav a { display:block; padding: 10px 12px; border-radius: 12px; color: var(--text); opacity:.9; }
+    .nav a:hover { background: rgba(255,255,255,.05); opacity:1; }
+    .nav a.active { background: linear-gradient(135deg, rgba(122,162,247,.18), rgba(248,189,127,.15)); box-shadow: inset 0 0 0 1px rgba(255,255,255,.06); }
+
+    .controls { display:flex; gap:10px; margin-top: 18px; }
+    .btn { appearance:none; border:0; padding:10px 12px; border-radius: 12px; background: #202633; color: var(--text); cursor:pointer; font-weight:600; box-shadow: var(--shadow); }
+    .btn:hover { filter: brightness(1.08); }
+
+    /* Hero */
+    .hero { position: relative; margin: 0 0 24px; padding: 28px; border-radius: var(--radius); background: linear-gradient(135deg, rgba(122,162,247,.16), rgba(248,189,127,.12)); box-shadow: var(--shadow); overflow:hidden; }
+    .hero h1 { font-family: Merriweather, serif; font-size: clamp(1.8rem, 3.3vw, 2.6rem); line-height:1.1; margin:0 0 10px; }
+    .hero p { margin:0; color: var(--muted); }
+
+    /* Cards */
+    .card { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px; margin-bottom: 28px; }
+    .card h2 { font-family: Merriweather, serif; margin: 0 0 14px; font-size: 1.6rem; }
+    .meta { color: var(--muted); font-size:.92rem; margin-top:-6px; margin-bottom: 14px; }
+
+    /* Chapter typography */
+    .chapter { line-height: var(--lh); font-size: var(--fs); }
+    .chapter h3 { font-family: Merriweather, serif; font-size: 1.4rem; margin: 0 0 12px; }
+    .chapter p { margin: 0 0 16px; }
+
+    .pager { display:flex; justify-content: space-between; align-items:center; gap:12px; margin-top: 26px; }
+    .pager a, .pager button { background: #202633; color: var(--text); padding: 10px 14px; border-radius: 12px; text-decoration: none; border: 0; cursor: pointer; }
+
+    .footer { color: var(--muted); text-align:center; font-size:.9rem; padding: 40px 0 60px; }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .shell { grid-template-columns: 1fr; }
+      aside { position: relative; height: auto; }
+      .brand { justify-content: space-between; }
+      .navgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside>
+      <div class="brand">
+        <div class="badge"><span>RM</span></div>
+        <div>
+          <div class="title">Rindu yang Tertinggal di Malang</div>
+          <div class="subtitle">Pedro Suni</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="btn" id="startBtn">Mulai Membaca</button>
+        <button class="btn" id="contBtn" title="Lanjutkan dari posisi terakhir">Lanjutkan</button>
+      </div>
+
+      <nav class="nav">
+        <h4>Halaman</h4>
+        <a href="#beranda" class="navlink active">Beranda</a>
+        <a href="#hakcipta" class="navlink">Hak Cipta</a>
+        <a href="#kata-pengantar" class="navlink">Kata Pengantar</a>
+        <a href="#daftar-isi" class="navlink">Daftar Isi</a>
+        <h4>Bab</h4>
+        <div class="navgrid">
+          <a href="#prolog" class="navlink">Prolog</a>
+          <a href="#bab1" class="navlink">Bab 1</a>
+          <a href="#bab2" class="navlink">Bab 2</a>
+          <a href="#bab3" class="navlink">Bab 3</a>
+          <a href="#bab4" class="navlink">Bab 4</a>
+          <a href="#bab5" class="navlink">Bab 5</a>
+          <a href="#bab6" class="navlink">Bab 6</a>
+          <a href="#bab7" class="navlink">Bab 7</a>
+          <a href="#epilog" class="navlink">Epilog</a>
+        </div>
+        <h4>Lainnya</h4>
+        <a href="#tentang" class="navlink">Tentang Penulis</a>
+      </nav>
+    </aside>
+
+    <main>
+      <article class="content">
+        <section id="beranda" class="card">
+          <div class="hero">
+            <h1>Rindu yang Tertinggal di Malang</h1>
+            <p>Kisah tentang cinta pertama, keberanian menantang jarak dan restu, serta perjalanan pulang ke diri sendiri.</p>
+          </div>
+          <div class="chapter">
+            <h3>Blurb</h3>
+            <p>Di bawah langit senja Oetulu, Pedro pertama kali mengenal Sandra—gadis yang membuat waktu seolah berhenti. Bertahun-tahun kemudian, mereka kembali bertemu di tengah lampu-lampu Natal, membawa harapan yang dulu tak sempat diucapkan. Namun cinta mereka diuji: jarak, restu keluarga, hingga batas negara. Dari Malang hingga Timor Leste, ini adalah perjalanan tentang mencinta, kehilangan, dan melepaskan.</p>
+            <p><em>“Kadang, yang tertinggal hanyalah rindu… tapi rindu itulah yang mengajarkan kita arti hidup.”</em></p>
+          </div>
+        </section>
+
+        <section id="hakcipta" class="card chapter">
+          <h2>Hak Cipta</h2>
+          <p>© 2025 Pedro Suni. Hak cipta dilindungi undang-undang. Dilarang memperbanyak atau memperjualbelikan isi buku ini tanpa izin tertulis dari penulis.</p>
+          <p>ISBN: Pedro 1901</p>
+        </section>
+
+        <section id="kata-pengantar" class="card chapter">
+          <h2>Kata Pengantar</h2>
+          <p>Puji syukur saya panjatkan kepada Tuhan Yang Maha Esa, karena atas rahmat-Nya, novel ini akhirnya dapat diselesaikan.</p>
+          <p>Kisah ini lahir dari campuran nyata dan imajinasi, dari ingatan yang melekat di hati, dan dari perjalanan yang pernah saya tempuh. Terima kasih untuk keluarga yang selalu memberi doa, sahabat yang setia mendengar cerita, dan semua pembaca yang bersedia melangkah masuk ke dalam halaman-halaman ini.</p>
+          <p>Semoga <em>Rindu yang Tertinggal di Malang</em> dapat menjadi pengingat bahwa cinta tidak selalu berakhir di pelukan, tetapi bisa tetap hidup di kenangan dan doa.</p>
+          <p style="margin-top:16px;">Pedro Suni<br/>Timor Leste, 2025</p>
+        </section>
+
+        <section id="daftar-isi" class="card chapter">
+          <h2>Daftar Isi</h2>
+          <ol>
+            <li><a href="#prolog">Prolog – Langkah Pertama</a></li>
+            <li><a href="#bab1">Bab 1 – Oetulu, Awal dari Segalanya</a></li>
+            <li><a href="#bab2">Bab 2 – LDR dan Janji di Antara Jarak</a></li>
+            <li><a href="#bab3">Bab 3 – Malang, Bukan Sekadar Nama Kota</a></li>
+            <li><a href="#bab4">Bab 4 – Perubahan</a></li>
+            <li><a href="#bab5">Bab 5 – Luka yang Tak Pernah Kuduga Sedalam Ini</a></li>
+            <li><a href="#bab6">Bab 6 – Mulai Belajar Melepaskan</a></li>
+            <li><a href="#bab7">Bab 7 – Jalan Pulang ke Diri Sendiri</a></li>
+            <li><a href="#epilog">Epilog – Untuk Sandra, dan Untuk Diriku Sendiri</a></li>
+          </ol>
+        </section>
+
+        <section id="prolog" class="card chapter" data-next="#bab1">
+          <h2>Prolog – Langkah Pertama</h2>
+          <p>Hujan sore itu membasahi jalan di depan terminal kecil. Pedro berdiri di bawah payung, menatap ke kejauhan. Ia tidak tahu, langkah kecil yang ia ambil hari itu akan membawanya ke perjalanan panjang penuh rindu dan luka.</p>
+          <div class="pager">
+            <span></span>
+            <a href="#bab1">Bab Selanjutnya →</a>
+          </div>
+        </section>
+
+        <section id="bab1" class="card chapter" data-prev="#prolog" data-next="#bab2">
+          <h2>Bab 1 – Oetulu, Awal dari Segalanya</h2>
+          <p>Namaku Pedro Suni. Aku lahir pada 2002 di sebuah desa kecil bernama Oetulu, tempat di mana angin selalu membawa aroma tanah basah setelah hujan, dan matahari sore memantulkan warna emas di pegunugan yang menghampar sejauh mata memandang.</p>
+          <p>Anak bungsu dari sebelas bersaudara, aku tumbuh di bawah atap sederhana yang penuh tawa dan doa. Ayahku, almarhum Arnaldo Sombiko, seorang lelaki keras namun penuh kasih, dan ibuku, Petronella Balo, perempuan yang sabarnya seperti laut yang tak pernah kering.</p>
+          <p>Segalanya dimulai ketika aku duduk di bangku kelas 4 SD. Di ruang kelas yang catnya mulai pudar itu, aku melihatnya—Sandra Alunha Guterres. Matanya tenang, dan senyum kecilnya entah mengapa membuat dadaku berdegup lebih cepat.</p>
+          <p>Kami terlalu muda untuk memahami arti kata cinta. Di SDN 28 Agustus Pante Makasar Oe-Cusse, kami hanya dua anak kecil yang duduk di bangku berbeda, belajar mengeja kata-kata yang kelak akan menjerat hati kami.</p>
+          <p>Namun gosip teman-teman kecil kami—bisikan nakal di waktu istirahat—mulai menanamkan benih rasa di hatiku, benih yang tumbuh diam-diam tanpa pernah kuberi nama.</p>
+          <p>Waktu berjalan. Aku harus pindah ke Dili untuk melanjutkan sekolah. Aku meninggalkan desa, tapi rasa itu tetap tinggal—seperti bayangan yang tak pernah bisa dihapus.</p>
+          <p>Lalu malam Natal 2018, Tuhan seakan bermain-main. Kami bertemu lagi. Hanya berjalan bersama di bawah lampu jalan yang redup, tanpa keberanian untuk bicara tentang perasaan yang sejak dulu kupendam.</p>
+          <p>Tahun baru 2019, sebuah pertemuan tak disengaja akhirnya menyalakan api yang lama tertidur. Kami resmi bersama. Cinta itu masih muda, masih rapuh, tapi tulus.</p>
+          <div class="pager">
+            <a href="#prolog">← Bab Sebelumnya</a>
+            <a href="#bab2">Bab Selanjutnya →</a>
+          </div>
+        </section>
+
+        <section id="bab2" class="card chapter" data-prev="#bab1" data-next="#bab3">
+          <h2>Bab 2 – LDR dan Janji di Antara Jarak</h2>
+          <p>Hubungan kami tidak dimulai dengan kemudahan. Sejak awal, jarak sudah menjadi tembok tinggi yang berdiri di antara kami. Aku harus kembali ke Dili untuk melanjutkan SMA. Sandra tetap di Oe-Cusse. Kami bertahan lewat pesan singkat dan panggilan telepon, meski aku tahu, LDR bukan sekadar ujian jarak—itu ujian kepercayaan.</p>
+          <p>Setiap kali aku pulang, setiap kali mataku bertemu matanya, semua perjuangan itu terasa sepadan. Aku lulus lebih dulu, tapi aku memilih menunggu. Aku menolak tawaran untuk pergi jauh, karena takut meninggalkan dia sendirian.</p>
+          <p>Akhirnya, kami lulus bersama. Rencana masa depan pun mulai disusun. Aku ingin dia melanjutkan kuliah di Indonesia bersamaku. Tapi keluarganya memutuskan lain—Sandra harus kuliah lebih dulu di Dili. Aku tidak setuju, tapi aku diam. Dalam hidup, aku tahu, ada hal-hal yang tak bisa kupaksakan.</p>
+          <p>Namun, cinta kami tidak berhenti di situ. Dengan keberanian yang mungkin terlalu besar untuk usia kami, kami sepakat: suatu hari, kami akan pergi bersama. Kota Malang menjadi impian, tempat kami percaya cinta akan bertumbuh tanpa batas.</p>
+          <div class="pager">
+            <a href="#bab1">← Bab Sebelumnya</a>
+            <a href="#bab3">Bab Selanjutnya →</a>
+          </div>
+        </section>
+
+        <section id="bab3" class="card chapter" data-prev="#bab2" data-next="#bab4">
+          <h2>Bab 3 – Malang, Bukan Sekadar Nama Kota</h2>
+          <p>Malang bukan hanya nama kota. Bagiku, itu adalah simbol dari keberanian kami. Kami tiba di sana tanpa restu penuh, tanpa jaminan, hanya membawa tas berisi pakaian, segenggam uang, dan keyakinan bahwa cinta bisa mengalahkan segalanya.</p>
+          <p>Hari-hari awal penuh tawa kecil dan harapan besar. Tapi hidup bukan cerita dongeng.</p>
+          <p>Suatu pagi, dunia kami runtuh. Sandra ditahan oleh pihak imigrasi karena dokumennya tidak lengkap. Aku berdiri di luar ruang pemeriksaan, menggenggam ponsel yang terus berdering, tak tahu harus bicara apa.</p>
+          <p>Wajahnya yang pucat, tatapan matanya yang meminta tolong—semua itu menancap di kepalaku. Dia dideportasi, dan aku ditinggalkan sendirian di kota yang tiba-tiba terasa dingin.</p>
+          <p>Aku pulang ke Timor Leste. Bukan untuk menyerah, tapi untuk menepati janji. Aku datang ke rumahnya, duduk di hadapan ayahnya. Kalimat itu masih kuingat jelas: “Kalau kamu laki-laki, datang dan lamar dia.” Dan aku melakukannya. Meskipun ayahku telah tiada, aku berdiri tegak sebagai seorang laki-laki yang mencintai dan ingin bertanggung jawab.</p>
+          <div class="pager">
+            <a href="#bab2">← Bab Sebelumnya</a>
+            <a href="#bab4">Bab Selanjutnya →</a>
+          </div>
+        </section>
+
+        <section id="bab4" class="card chapter" data-prev="#bab3" data-next="#bab5">
+          <h2>Bab 4 – Perubahan</h2>
+          <p>Ternyata, cinta yang dulu terasa seperti pohon besar yang tak tergoyahkan, perlahan mulai kehilangan daunnya. Sandra, yang dulu selalu menatapku seperti aku satu-satunya orang di dunia, kini mulai berubah. Setelah dia bekerja, kesibukan dan lingkungannya yang baru membuat jarak di antara kami semakin lebar.</p>
+          <p>Percakapannya singkat, pesannya jarang, dan senyumnya… tak lagi sama. Awalnya aku menepis semua curiga. Aku bilang pada diriku sendiri, “Dia hanya lelah, dia hanya sibuk.” Tapi lama-lama, mata dan hatiku tak bisa lagi berbohong. Ada nama lain yang muncul di antara kami. Ada tawa yang bukan lagi milikku.</p>
+          <p>Bukti demi bukti kukumpulkan—bukan untuk menjatuhkannya, tapi untuk menjawab pertanyaan yang terus berputar di kepalaku: Salahku di mana? Kami bertengkar hebat. Kata-kata yang tak seharusnya diucapkan meluncur begitu saja. Sampai akhirnya urusan kami merembet ke kantor polisi, bahkan meja jaksa. Semua itu terasa asing, seperti aku sedang menonton kisah orang lain.</p>
+          <p>Aku tetap ingin bertahan, meski dia sudah memilih pergi. Tapi bagaimana mungkin menahan seseorang yang sudah memalingkan hati? Aku belum bisa melepaskan. Bagiku, Sandra masih rumah—walau pintunya kini sudah tertutup rapat.</p>
+          <div class="pager">
+            <a href="#bab3">← Bab Sebelumnya</a>
+            <a href="#bab5">Bab Selanjutnya →</a>
+          </div>
+        </section>
+
+        <section id="bab5" class="card chapter" data-prev="#bab4" data-next="#bab6">
+          <h2>Bab 5 – Luka yang Tak Pernah Kuduga Sedalam Ini</h2>
+          <p>Setelah semua yang kami lewati—penantian, jarak, perjuangan, perpisahan—aku mulai bertanya pada diriku sendiri: Apa aku tidak cukup? Bahkan ketika dia berjalan di sisi pria lain, bahkan saat foto-foto itu menghantamku seperti peluru, aku masih berharap semua ini hanya mimpi buruk yang akan berakhir ketika aku membuka mata.</p>
+          <p>Tapi kenyataan tak mengenal belas kasihan. Kisah ini bukan sekadar cinta yang kandas. Ini adalah kisah tentang dua anak muda yang pernah menantang dunia demi bersama, lalu kalah oleh ego, keadaan, dan waktu.</p>
+          <p>Aku tidak sempurna—aku tahu itu. Tapi setidaknya aku berjuang, setidaknya aku tidak menyerah duluan. Aku hanyalah anak bungsu yang kehilangan ayah, mencoba mencintai satu orang dengan seluruh jiwanya. Ironisnya, justru cinta itu yang hampir membuatku kehilangan diriku sendiri.</p>
+          <div class="pager">
+            <a href="#bab4">← Bab Sebelumnya</a>
+            <a href="#bab6">Bab Selanjutnya →</a>
+          </div>
+        </section>
+
+        <section id="bab6" class="card chapter" data-prev="#bab5" data-next="#bab7">
+          <h2>Bab 6 – Mulai Belajar Melepaskan</h2>
+          <p>Hari-hari terus berjalan, dan aku mulai paham: cinta tidak bisa dipaksa. Orang yang kita perjuangkan tidak selalu akan memilih bertahan. Tidak semua yang kita cintai akan memilih untuk tinggal. Dan melepaskan… ternyata bukan berarti kalah. Melepaskan adalah cara memberi ruang bagi diri sendiri untuk pulih.</p>
+          <p>Aku masih mencintainya—mungkin akan selalu. Tapi aku tak ingin lagi mengikat diriku pada masa lalu yang hanya menahan langkah. Pelan-pelan, aku menulis ulang kisahku. Bukan lagi sebagai pasangan Sandra, tapi sebagai Pedro—laki-laki yang mencoba bangkit dari luka.</p>
+          <p>Cinta mengajariku bahwa ia bisa seindah harapan, dan sesakit kenyataan. Tapi dari cinta pula, aku belajar arti menjadi manusia: rapuh, kuat, dan berani sembuh.</p>
+          <div class="pager">
+            <a href="#bab5">← Bab Sebelumnya</a>
+            <a href="#bab7">Bab Selanjutnya →</a>
+          </div>
+        </section>
+
+        <section id="bab7" class="card chapter" data-prev="#bab6" data-next="#epilog">
+          <h2>Bab 7 – Jalan Pulang ke Diri Sendiri</h2>
+          <p>Aku tak pernah menyangka, kisah cinta yang dulu kuanggap rumah, ternyata menjadi tempat aku tersesat. Namun di tengah semua kekacauan itu, aku menemukan hal yang lebih berharga: diriku sendiri.</p>
+          <p>Ada malam-malam di mana aku hanya duduk sendirian di teras, menatap langit tanpa bintang, dan bertanya-tanya kapan luka ini akan berhenti berdenyut. Doa-doa terucap dalam diam, memohon agar hati ini kembali tenang. Dan pelan-pelan, aku sadar: luka tidak selalu harus disembuhkan dengan lupa. Kadang, kita hanya perlu berdamai dengannya.</p>
+          <p>Aku mulai menata hidup kembali—melanjutkan kuliah, mengejar cita-cita, dan belajar mencintai diriku sendiri. Aku tidak lagi berharap dia kembali. Aku percaya, jika sesuatu memang ditakdirkan, ia akan datang di waktu yang tepat… dengan cara yang benar. Dan jika tidak, aku akan tetap baik-baik saja.</p>
+          <div class="pager">
+            <a href="#bab6">← Bab Sebelumnya</a>
+            <a href="#epilog">Bab Selanjutnya →</a>
+          </div>
+        </section>
+
+        <section id="epilog" class="card chapter" data-prev="#bab7">
+          <h2>Epilog – Untuk Sandra, dan Untuk Diriku Sendiri</h2>
+          <p>Sandra, jika suatu hari kamu membaca ini, ketahuilah bahwa aku pernah mencintaimu dengan cara yang paling tulus yang kumiliki. Aku pernah menunggu, berjuang, bahkan menantang segalanya demi bersamamu. Dan aku tidak menyesal, karena aku sudah memberikan yang terbaik dari diriku.</p>
+          <p>Terima kasih telah menjadi bagian dari kisah hidupku—untuk tawa dan juga lukanya. Tanpamu, aku mungkin tak akan menjadi Pedro yang hari ini lebih kuat dan lebih bijak.</p>
+          <p>Sekarang, aku berjalan sendiri. Tapi aku tidak kesepian. Aku membawa semua pelajaran, kenangan, dan harapan yang dulu pernah kita rajut.</p>
+          <p>Dan untuk siapa pun yang membaca ini, jika kamu sedang berjuang seperti aku pernah berjuang, ingatlah satu hal: <em>Cinta sejati tidak selalu harus dimiliki. Tapi dari cinta pula, kita belajar menjadi versi terbaik dari diri kita sendiri.</em></p>
+          <p>— Pedro Suni</p>
+          <div class="pager">
+            <a href="#bab7">← Bab Sebelumnya</a>
+            <span></span>
+          </div>
+        </section>
+
+        <section id="tentang" class="card chapter">
+          <h2>Tentang Penulis</h2>
+          <p>Pedro Suni lahir dan tumbuh di Oetulu, Timor Leste. Ia menyukai kisah-kisah yang jujur tentang perjalanan, keluarga, dan cinta. <em>Rindu yang Tertinggal di Malang</em> adalah karyanya yang menyatukan kenangan dan imajinasi menjadi sebuah perjalanan hati.</p>
+        </section>
+
+        <footer class="footer">
+          <div>© 2025 Pedro Suni — <a href="#hakcipta">Hak Cipta</a></div>
+        </footer>
+      </article>
+    </main>
+  </div>
+
+  <script>
+    // Smooth scroll + active nav + reading position
+    const links = document.querySelectorAll('.navlink');
+    const contBtn = document.getElementById('contBtn');
+    const startBtn = document.getElementById('startBtn');
+
+    function setActive(hash){
+      links.forEach(a=>a.classList.toggle('active', a.getAttribute('href')===hash));
+    }
+
+    function go(hash){
+      const el = document.querySelector(hash);
+      if(!el) return;
+      history.replaceState(null, '', hash);
+      el.scrollIntoView({ behavior: 'smooth', block:'start' });
+      setActive(hash);
+      localStorage.setItem('rytm:last', hash);
+    }
+
+    // Init from hash or last read
+    window.addEventListener('load', () => {
+      const initial = location.hash || '#beranda';
+      setActive(initial);
+      const last = localStorage.getItem('rytm:last');
+      contBtn.style.display = last ? 'inline-block' : 'none';
+      contBtn.onclick = () => go(last || '#prolog');
+      startBtn.onclick = () => go('#prolog');
+
+      // Intercept sidebar clicks
+      links.forEach(a=>a.addEventListener('click', (e)=>{
+        e.preventDefault();
+        go(a.getAttribute('href'));
+      }));
+
+      // Setup pager buttons inside chapters
+      document.querySelectorAll('.pager a').forEach(a=>{
+        a.addEventListener('click', (e)=>{ e.preventDefault(); go(a.getAttribute('href')); });
+      });
+
+      // Observe sections to update active nav on scroll
+      const sections = Array.from(document.querySelectorAll('section[id]'));
+      const observer = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            const id = '#'+entry.target.id;
+            setActive(id);
+            localStorage.setItem('rytm:last', id);
+          }
+        })
+      }, { root: null, rootMargin: '0px 0px -70% 0px', threshold: 0.1 });
+      sections.forEach(sec=>observer.observe(sec));
+    });
+  </script>
+</body>
+</html>
